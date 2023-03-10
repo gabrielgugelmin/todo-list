@@ -1,0 +1,60 @@
+.tasks {
+  margin-top: 4rem;
+
+  &__list {
+    border-radius: 8px;
+    border-top: 1px solid var(--gray-400);
+    margin-top: 1.5rem;
+    padding: 4rem 0;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: var(--font-medium);
+      font-weight: bold;
+      color: var(--blue);
+      margin-right: 0.5rem;
+
+      &:last-child {
+        color: var(--purple);
+      }
+    }
+  }
+}
+
+.task {
+  background-color: var(--gray-500);
+  border-radius: 8px;
+  border: 1px solid var(--gray-400);
+  color: var(--gray-100);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.25rem 8fr 1.5rem;
+  padding: 1rem;
+
+  + .task {
+    margin-top: 0.75rem;
+  }
+
+  &--done {
+    border-color: transparent;
+    text-decoration: line-through;
+    color: var(--gray-300);
+  }
+}
+
+.no-result {
+  color: var(--gray-300);
+  text-align: center;
+
+  svg {
+    margin-bottom: 1rem;
+  }
+
+  strong {
+    display: block;
+  }
+}
