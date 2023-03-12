@@ -1,4 +1,4 @@
-import { TaskType } from '@/App';
+import { Status, TaskType } from '@/App';
 import { ClipboardText } from '@phosphor-icons/react';
 import { Badge } from '../Badge/Badge';
 import { Task } from './Task';
@@ -12,15 +12,16 @@ interface TasksProps {
 
 export function Tasks({ tasks, onDeleteClick, onFinishClick }: TasksProps) {
   const createdTasks = tasks.length;
+  const doneTasks = tasks.filter((task) => task.status === Status.done).length;
 
   return (
     <div className={styles.tasks}>
       <div className={styles['tasks__header']}>
         <p>
-          Tarefas criadas <Badge quantity={createdTasks} />
+          Tarefas criadas <Badge text={`${createdTasks}`} />
         </p>
         <p>
-          Concluídas <Badge quantity={0} />
+          Concluídas <Badge text={`${doneTasks} de ${createdTasks}`} />
         </p>
       </div>
       <div className={styles['tasks__list']}>

@@ -1,5 +1,9 @@
 import styles from './Badge.module.scss';
 
-export function Badge({ quantity = 0 }) {
-  return <span className={styles.badge}>{quantity}</span>;
+interface BadgeProps {
+  text: string;
+}
+
+export function Badge({ text }: BadgeProps) {
+  return <span className={styles.badge}>{text}</span>;
 }
