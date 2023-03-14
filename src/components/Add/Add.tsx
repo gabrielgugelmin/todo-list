@@ -25,6 +25,8 @@ export function Add({ addTask }: AddProps) {
     setText('');
   }
 
+  const isAddButtonDisabled = !text.trim().length;
+
   return (
     <form onSubmit={handleAddTask}>
       <div className={styles.add}>
@@ -34,7 +36,7 @@ export function Add({ addTask }: AddProps) {
           value={text}
           onChange={(event) => setText(event.target.value)}
         />
-        <button>
+        <button disabled={isAddButtonDisabled}>
           Criar <PlusCircle size={16} weight="bold" type="submit" />
         </button>
       </div>

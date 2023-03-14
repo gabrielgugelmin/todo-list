@@ -42,8 +42,12 @@
       margin-left: 0.5rem;
     }
 
-    &:hover {
+    &:not(:disabled):hover {
       background-color: var(--blue);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
     }
   }
 }
